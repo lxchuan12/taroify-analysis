@@ -1,0 +1,149 @@
+@import "./variables";
+
+.#{$component-prefix}uploader {
+  position: relative;
+  display: inline-block;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    &--disabled {
+      opacity: $uploader-disabled-opacity;
+
+      .#{$component-prefix}uploader__upload {
+        &:active {
+          background: $uploader-upload-background-color;
+        }
+      }
+    }
+  }
+
+  &__upload {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: $uploader-upload-width;
+    height: $uploader-upload-height;
+    margin: $uploader-upload-margin;
+    background: $uploader-upload-background-color;
+
+    &:active {
+      background: $uploader-upload-active-background-color;
+    }
+
+    &--readonly:active {
+      background: $uploader-upload-background-color;
+    }
+
+    &-icon {
+      font-size: $uploader-upload-icon-font-size;
+      color: $uploader-upload-icon-color;
+    }
+
+    &-text {
+      margin-top: $uploader-upload-text-margin-top;
+      font-size: $uploader-upload-text-font-size;
+      color: $uploader-upload-text-color;
+    }
+  }
+
+  &__preview {
+    position: relative;
+    margin: $uploader-preview-margin;
+    cursor: pointer;
+
+    &-image {
+      display: block;
+      width: $uploader-preview-image-width;
+      height: $uploader-preview-image-height;
+      overflow: hidden;
+    }
+
+    &-remove {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: $uploader-remove-width;
+      height: $uploader-remove-height;
+      background: $uploader-remove-background-color;
+      border-radius: $uploader-remove-border-radius;
+
+      &-icon {
+        position: absolute;
+        top: -2px * $hd;
+        right: -2px * $hd;
+        font-size: $uploader-remove-icon-font-size;
+        color: $uploader-remove-icon-color;
+        transform: scale(0.5);
+      }
+    }
+
+    &-cover {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &__mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $uploader-mask-color;
+    background: $uploader-mask-background-color;
+
+    &-icon {
+      font-size: $uploader-mask-icon-size;
+    }
+
+    &-message {
+      padding: $uploader-mask-message-padding;
+      margin-top: $uploader-mask-message-margin-top;
+      font-size: $uploader-mask-message-font-size;
+      line-height: $uploader-mask-message-line-height;
+    }
+  }
+
+  &__loading {
+    width: $uploader-loading-icon-width;
+    height: $uploader-loading-icon-height;
+    color: $uploader-loading-icon-color;
+  }
+
+  &__file {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: $uploader-file-width;
+    height: $uploader-file-height;
+    background: $uploader-file-background-color;
+
+    &-icon {
+      font-size: $uploader-file-icon-font-size;
+      color: $uploader-file-icon-color;
+    }
+
+    &-name {
+      box-sizing: border-box;
+      width: 100%;
+      padding: $uploader-file-name-padding;
+      margin-top: $uploader-file-name-margin-top;
+      font-size: $uploader-file-name-font-size;
+      color: $uploader-file-name-color;
+      text-align: center;
+    }
+  }
+}

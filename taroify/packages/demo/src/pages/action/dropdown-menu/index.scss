@@ -1,0 +1,14 @@
+@import "~@taroify/core/styles/prefix";
+@import "~@taroify/core/styles/variables";
+@import "../../../styles/prefix";
+
+.dropdown-menu-demo {
+  .#{$demo-prefix}block__content {
+    padding: 0;
+  }
+
+  .custom-color {
+    --dropdown-menu-title-active-color: #1989fa;
+    --dropdown-menu-option-active-color: #1989fa;
+  }
+}

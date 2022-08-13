@@ -1,0 +1,32 @@
+@import "./variables";
+
+.#{$component-prefix}tabs__tab {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: $tab-padding;
+  font-size: $tab-font-size;
+  line-height: $tab-line-height;
+  color: $tab-color;
+  cursor: pointer;
+
+  &--active {
+    font-weight: $tab-active-font-weight;
+    color: $tab-active-color;
+  }
+
+  &--disabled {
+    color: $tab-disabled-color;
+    cursor: not-allowed;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

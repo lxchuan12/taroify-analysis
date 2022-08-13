@@ -1,0 +1,34 @@
+@import "./variables";
+
+.#{$component-prefix}tabs {
+  position: relative;
+
+  &__track {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    will-change: left;
+  }
+
+  &__content {
+
+    &--animated {
+      overflow: hidden;
+    }
+
+    .#{$component-prefix}tabs__tab-pane {
+      &,
+      &-wrapper {
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 100%;
+      }
+
+      &-wrapper--inactive {
+        height: 0;
+        overflow: visible;
+      }
+    }
+  }
+}

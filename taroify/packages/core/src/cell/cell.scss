@@ -1,0 +1,112 @@
+@import "./variables";
+
+// TODO The base variables need to be migrated
+.#{$component-prefix}cell {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  padding: $cell-vertical-padding $cell-horizontal-padding;
+  overflow: hidden;
+  font-size: $cell-font-size;
+  line-height: $cell-line-height;
+  color: $cell-color;
+  background: $cell-background-color;
+
+  &::after {
+    @include hairline-bottom($cell-border-color, var(--padding-sm, $padding-sm), var(--padding-sm, $padding-sm));
+  }
+
+  &:last-child::after,
+  &--borderless::after {
+    display: none;
+  }
+
+  &__title {
+    flex: 1;
+  }
+
+  &__brief {
+    margin-top: $cell-brief-margin-top;
+    font-size: $cell-brief-font-size;
+    line-height: $cell-brief-line-height;
+    color: $cell-brief-color;
+  }
+
+  &--start {
+    align-items: flex-start;
+  }
+
+  &--center {
+    align-items: center;
+  }
+
+  &--end {
+    align-items: flex-end;
+  }
+
+  &--large {
+    padding-top: $cell-vertical-padding-large;
+    padding-bottom: $cell-vertical-padding-large;
+
+    .#{$component-prefix}cell__title {
+      font-size: $cell-title-font-size-large;
+    }
+
+    .#{$component-prefix}cell__subtitle {
+      font-size: $cell-subtitle-font-size-large;
+    }
+  }
+
+  &--clickable {
+    cursor: pointer;
+
+    &:active {
+      background: $cell-active-color;
+    }
+  }
+
+  &--required {
+    overflow: visible;
+
+    &::before {
+      position: absolute;
+      left: var(--padding-xs, $padding-xs);
+      font-size: $cell-font-size;
+      color: $cell-required-color;
+      content: '*';
+    }
+  }
+
+
+  &__value {
+    flex: 1;
+    color: $cell-value-color;
+    text-align: right;
+
+    &--alone {
+      color: $text-color;
+      text-align: left;
+    }
+  }
+
+  &__icon,
+  &__right-icon {
+    height: $cell-line-height;
+    font-size: $cell-icon-size;
+    line-height: $cell-line-height;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    margin-right: $cell-icon-margin-left;
+  }
+
+  &__right-icon {
+    display: flex;
+    align-items: center;
+    margin-left: $cell-right-icon-margin-right;
+    color:$cell-value-color;
+  }
+}

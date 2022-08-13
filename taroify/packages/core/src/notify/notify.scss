@@ -1,0 +1,34 @@
+@import "./variables";
+
+.#{$component-prefix}notify {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $notify-padding;
+  font-size: $notify-font-size;
+  line-height: $notify-line-height;
+  color: $notify-color;
+  text-align: center;
+  word-wrap: break-word;
+
+  // allow newline character
+  white-space: pre-wrap;
+
+
+  &--primary {
+    background: $notify-primary-background-color;
+  }
+
+  &--success {
+    background: $notify-success-background-color;
+  }
+
+  &--danger {
+    background: $notify-danger-background-color;
+  }
+
+  &--warning {
+    background: $notify-warning-background-color;
+  }
+}

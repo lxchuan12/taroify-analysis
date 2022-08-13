@@ -1,0 +1,29 @@
+@import "./variables";
+
+.#{$component-prefix}index-list {
+  &__sidebar {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    z-index: $index-list-sidebar-z-index;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    touch-action: none;
+    cursor: pointer;
+    user-select: none;
+    transform: translateY(-50%);
+  }
+
+  &__index {
+    position: relative;
+    padding: $index-list-index-padding;
+    font-size: $index-list-index-font-size;
+    font-weight: $index-list-index-font-weight;
+    line-height: $index-list-index-line-height;
+
+    &--active {
+      color: $index-list-index-active-color;
+    }
+  }
+}

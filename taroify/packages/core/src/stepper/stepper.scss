@@ -1,0 +1,137 @@
+@import "./variables";
+
+.#{$component-prefix}stepper {
+  display: inline-block;
+  user-select: none;
+
+  &__decrease,
+  &__increase {
+    position: relative;
+    box-sizing: border-box;
+    display: inline-block;
+    width: $stepper-input-height;
+    height: $stepper-input-height;
+    padding: 0;
+    margin: 0;
+    color: $stepper-button-icon-color;
+    vertical-align: middle;
+    cursor: pointer;
+    background: $stepper-background-color;
+    border: 0;
+
+    &::before {
+      width: 50%;
+      height: 1px * $hd;
+    }
+
+    &::after {
+      width: 1px * $hd;
+      height: 50%;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      content: '';
+      background-color: currentColor;
+      transform: translate(-50%, -50%);
+    }
+
+    &:active {
+      background-color: $stepper-active-background-color;
+    }
+
+    &--disabled {
+      color: $stepper-button-disabled-color;
+      cursor: not-allowed;
+      background: $stepper-button-disabled-background-color;
+
+      &:active {
+        background: $stepper-button-disabled-background-color;
+      }
+    }
+  }
+
+  &__decrease::after {
+    display: none;
+  }
+
+  &__input {
+    box-sizing: border-box;
+    display: inline-block;
+    width: $stepper-input-width;
+    height: $stepper-input-height;
+    padding: 0;
+    margin: $stepper-input-margin;
+    font-size: $stepper-input-font-size;
+    line-height: $stepper-input-line-height;
+    color: $stepper-input-color;
+    text-align: center;
+    vertical-align: middle;
+    background: $stepper-input-background-color;
+    border: 0 none;
+    border-radius: 0;
+    appearance: none;
+
+    &:disabled {
+      color: $stepper-input-disabled-color;
+      background: $stepper-input-disabled-background-color;
+      opacity: 1;
+      // fix disabled color in iOS
+      -webkit-text-fill-color: $stepper-input-disabled-color;
+    }
+
+    &:read-only {
+      cursor: default;
+    }
+
+    .weui-input {
+      height: 100%;
+    }
+  }
+
+  &--rounded {
+    .#{$component-prefix}stepper__decrease {
+      border-radius: $stepper-rounded-decrease-button-border-radius 0 0 $stepper-rounded-decrease-button-border-radius;
+    }
+
+    .#{$component-prefix}stepper__increase {
+      border-radius: 0 $stepper-rounded-increase-button-border-radius $stepper-rounded-increase-button-border-radius 0;
+    }
+  }
+
+  &--circular {
+    .#{$component-prefix}stepper__input {
+      background: transparent;
+    }
+
+    .#{$component-prefix}stepper__decrease {
+      color: $stepper-circular-decrease-button-color;
+      background: $stepper-circular-decrease-button-background-color;
+      border: 1px * $hd solid $stepper-circular-decrease-button-border-color;
+    }
+
+    .#{$component-prefix}stepper__increase {
+      color: $stepper-circular-increase-button-color;
+      background: $stepper-circular-increase-button-background-color;
+    }
+
+    .#{$component-prefix}stepper__decrease,
+    .#{$component-prefix}stepper__increase {
+      border-radius: 100%;
+
+      &:active {
+        opacity: $active-opacity;
+      }
+
+      &--disabled {
+        &,
+        &:active {
+          opacity: 0.3;
+        }
+      }
+    }
+  }
+}

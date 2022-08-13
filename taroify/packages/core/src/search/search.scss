@@ -1,0 +1,69 @@
+@import "./variables";
+
+.#{$component-prefix}search {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: $search-padding;
+  background-color: $search-background-color;
+
+  &__content {
+    display: flex;
+    flex: 1;
+    padding-left: $search-content-padding-left;
+    background: $search-content-background-color;
+    border-radius: $search-content-border-radius;
+
+    &--square {
+      border-radius: $search-content-square-border-radius;
+    }
+
+    &--rounded {
+      border-radius: $search-content-rounded-border-radius;
+    }
+  }
+
+  &__label {
+    padding: $search-label-padding;
+    font-size: $search-label-font-size;
+    line-height: $search-label-line-height;
+    color: $search-label-color;
+  }
+
+  &__field {
+    flex: 1;
+    padding: $search-field-padding;
+    background-color: transparent;
+
+    .#{$component-prefix}field__icon {
+      color: $search-left-icon-color;
+    }
+  }
+
+  &--action {
+    padding-right: 0;
+  }
+
+  input {
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
+    }
+  }
+
+  &__action {
+    padding: $search-action-padding;
+    font-size: $search-action-font-size;
+    line-height: $search-action-line-height;
+    color: $search-action-color;
+    cursor: pointer;
+    user-select: none;
+
+    &:active,
+    &--hover {
+      background: $search-action-active-background-color;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@import "./variables";
+
+.#{$component-prefix}badge {
+
+  &--content {
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: $badge-size;
+    padding: $badge-padding;
+    font-family: $badge-font-family;
+    font-size: $badge-font-size;
+    font-weight: $badge-font-weight;
+    line-height: 1.2;
+    color: $badge-color;
+    text-align: center;
+    background: $badge-background-color;
+    border: $badge-border-width solid $badge-border-color;
+    border-radius: $badge-border-radius;
+  }
+
+  &--dot {
+    width: $badge-dot-size;
+    min-width: 0;
+    height: $badge-dot-size;
+    padding: 0;
+    background: $badge-dot-color;
+    border-radius: 100%;
+  }
+
+  &--fixed {
+    position: absolute;
+    transform-origin: 100%;
+  }
+
+  &--top-left {
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  &--top-right {
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+  }
+
+  &--bottom-left {
+    bottom: 0;
+    left: 0;
+    transform: translate(-50%, 50%);
+  }
+
+  &--bottom-right {
+    right: 0;
+    bottom: 0;
+    transform: translate(50%, 50%);
+  }
+}

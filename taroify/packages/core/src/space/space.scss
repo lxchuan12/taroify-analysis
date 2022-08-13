@@ -1,0 +1,46 @@
+@import "./variables";
+
+.#{$component-prefix}space {
+
+  &__item {
+    display: flex;
+
+    &--mini {
+      margin-bottom: $space-item-vertical-gap-mini;
+    }
+
+    &--small {
+      margin-bottom: $space-item-vertical-gap-small;
+    }
+
+    &--medium {
+      margin-bottom: $space-item-vertical-gap-medium;
+    }
+
+    &--large {
+      margin-bottom: $space-item-vertical-gap-large;
+    }
+  }
+
+  &--horizontal {
+
+    .#{$component-prefix}space__item {
+
+      &--mini {
+        margin-right: $space-item-horizontal-gap-mini;
+      }
+
+      &--small {
+        margin-right: $space-item-horizontal-gap-small;
+      }
+
+      &--medium {
+        margin-right: $space-item-horizontal-gap-medium;
+      }
+
+      &--large {
+        margin-right: $space-item-horizontal-gap-large;
+      }
+    }
+  }
+}

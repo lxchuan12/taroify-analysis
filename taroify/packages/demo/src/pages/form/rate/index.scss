@@ -1,0 +1,10 @@
+@import "~@taroify/core/styles/prefix";
+@import "~@taroify/core/styles/variables";
+@import "../../../styles/prefix";
+
+.rate-demo {
+  .custom-color {
+    --rate-icon-empty-color: #eee;
+    --rate-icon-full-color: #ffd21e;
+  }
+}

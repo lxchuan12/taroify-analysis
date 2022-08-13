@@ -1,0 +1,26 @@
+@import "./variables";
+
+.#{$component-prefix}list {
+  &__loading,
+  &__finished,
+  &__error,
+  &__placeholder {
+    font-size: $list-text-font-size;
+    line-height: $list-text-line-height;
+    color: $list-text-color;
+    text-align: center;
+  }
+
+  &__placeholder {
+    .#{$component-prefix}loading__spinner,
+    .#{$component-prefix}loading__circular {
+      width: $list-loading-icon-width;
+      height: $list-loading-icon-height;
+    }
+  }
+
+  &__edge {
+    height: 0;
+    pointer-events: none;
+  }
+}

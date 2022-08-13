@@ -1,0 +1,67 @@
+@import "./variables";
+
+.#{$component-prefix}pagination {
+  display: flex;
+  font-size: $pagination-font-size;
+
+  &__item,
+  &__page-desc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__item {
+    box-sizing: border-box;
+    flex: 1;
+    min-width: $pagination-item-min-width;
+    height: $pagination-height;
+    color: $pagination-item-color;
+    cursor: pointer;
+    user-select: none;
+    background: $pagination-background-color;
+
+    &:active {
+      color: $pagination-item-active-color;
+      background-color: $pagination-item-active-background-color;
+    }
+
+    &::after {
+      border-width: var(--border-width-base, $border-width-base) 0 var(--border-width-base, $border-width-base) var(--border-width-base, $border-width-base);
+    }
+
+    &:last-child::after {
+      border-right-width: var(--border-width-base, $border-width-base);
+    }
+
+    &--active {
+      color: $pagination-item-active-color;
+      background-color: $pagination-item-active-background-color;
+    }
+
+    &--disabled {
+      &,
+      &:active {
+        color: $pagination-item-disabled-color;
+        cursor: not-allowed;
+        background: $pagination-item-disabled-background-color;
+        opacity: $pagination-item-disabled-opacity;
+      }
+    }
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__page,
+  &__start-ellipsis,
+  &__end-ellipsis {
+    flex-grow: 0;
+  }
+
+  &__button {
+    padding: $pagination-button-padding;
+    cursor: pointer;
+  }
+}

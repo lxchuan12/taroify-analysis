@@ -1,0 +1,290 @@
+@import "./variables";
+
+.#{$component-prefix}button {
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  line-height: $button-line-height;
+  text-align: center;
+  cursor: pointer;
+  border-radius: $button-border-radius;
+  transition: opacity $button-transition-duration;
+  appearance: none;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    content: ' ';
+    background: var(--black, $black);
+    border-color: var(--black, $black);
+    border-style: inherit;
+    border-width: inherit;
+    border-radius: inherit; /* inherit parent's border radius */
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  &:active::before {
+    opacity: 0.1;
+  }
+
+  &--mini {
+    height: $button-height-mini;
+    padding: $button-padding-mini;
+    font-size: $button-font-size-mini;
+  }
+
+  &--small {
+    height: $button-height-small;
+    padding: $button-padding-small;
+    font-size: $button-font-size-small;
+  }
+
+  &--medium {
+    height: $button-height-medium;
+    padding: $button-padding-medium;
+    font-size: $button-font-size-medium;
+  }
+
+  &--large {
+    width: 100%;
+    height: $button-height-large;
+    font-size: $button-font-size-large;
+  }
+
+  &--default {
+    color: $button-default-color;
+    background: $button-default-background-color;
+    border: $button-border-width solid $button-default-border-color;
+  }
+
+  &--primary {
+    color: $button-primary-color;
+    background: $button-primary-background-color;
+    border: $button-border-width solid $button-primary-border-color;
+  }
+
+  &--info {
+    color: $button-info-color;
+    background: $button-info-background-color;
+    border: $button-border-width solid $button-info-border-color;
+  }
+
+  &--success {
+    color: $button-success-color;
+    background: $button-success-background-color;
+    border: $button-border-width solid $button-success-background-color;
+  }
+
+  &--warning {
+    color: $button-warning-color;
+    background: $button-warning-background-color;
+    border: $button-border-width solid $button-warning-border-color;
+  }
+
+  &--danger {
+    color: $button-danger-color;
+    background: $button-danger-background-color;
+    border: $button-border-width solid $button-danger-border-color;
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: $button-disabled-opacity;
+
+    &:active::before {
+      opacity: 0;
+    }
+  }
+
+  &--loading {
+
+    &:active::before {
+      opacity: 0;
+    }
+  }
+
+  &--block {
+    display: block;
+    width: 100%;
+  }
+
+  &--text {
+    background: transparent;
+    border: 0 none;
+
+    &:active::before {
+      opacity: 0.1;
+    }
+
+    &.#{$component-prefix}button--default {
+      color: $button-default-color;
+    }
+
+    &.#{$component-prefix}button--primary {
+      color: $button-primary-background-color;
+
+      &:active::before {
+        background: $button-primary-background-color;
+      }
+    }
+
+    &.#{$component-prefix}button--info {
+      color: $button-info-background-color;
+
+      &:active::before {
+        background: $button-info-background-color;
+      }
+    }
+
+    &.#{$component-prefix}button--success {
+      color: $button-success-background-color;
+
+      &:active::before {
+        background: $button-success-background-color;
+      }
+    }
+
+    &.#{$component-prefix}button--warning {
+      color: $button-warning-background-color;
+
+      &:active::before {
+        background: $button-warning-background-color;
+      }
+    }
+
+    &.#{$component-prefix}button--danger {
+      color: $button-danger-background-color;
+
+      &:active::before {
+        background: $button-danger-background-color;
+      }
+    }
+  }
+
+  &--contained {
+    // none
+  }
+
+  &--outlined {
+    background: transparent;
+
+    &.#{$component-prefix}button--primary {
+      color: $button-primary-background-color;
+      background: $button-primary-color;
+
+      &:active::before {
+        background: $button-primary-background-color;
+      }
+    }
+
+    &.#{$component-prefix}button--info {
+      color: $button-info-background-color;
+      background: $button-info-color;
+
+      &:active::before {
+        background: $button-info-background-color;
+      }
+    }
+
+    &.#{$component-prefix}button--success {
+      color: $button-success-background-color;
+      background: $button-success-color;
+
+      &:active::before {
+        background: $button-success-background-color;
+      }
+    }
+
+    &.#{$component-prefix}button--warning {
+      color: $button-warning-background-color;
+      background: $button-warning-color;
+
+      &:active::before {
+        background: $button-warning-background-color;
+      }
+    }
+
+    &.#{$component-prefix}button--danger {
+      color: $button-danger-background-color;
+      background: $button-danger-color;
+
+      &:active::before {
+        background: $button-danger-background-color;
+      }
+    }
+  }
+
+  &--hairline {
+    border-width: 0;
+
+    &::after {
+      border-color: inherit;
+      border-radius: $button-border-radius;
+    }
+
+    &.#{$component-prefix}button--round::after {
+      border-radius: $button-border-radius-max;
+    }
+
+    &.#{$component-prefix}button--square::after {
+      border-radius: 0;
+    }
+  }
+
+  &--round {
+    border-radius: $button-border-radius-max;
+  }
+
+  &--square {
+    border-radius: 0;
+  }
+
+  &__icon {
+    font-size: 1.2em;
+    line-height: inherit;
+    color: inherit;
+  }
+
+  // align-items are ignored when flex container is a button in legacy safari
+  // see: https://bugs.webkit.org/show_bug.cgi?id=169700
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    // fix icon vertical align
+    // see: https://github.com/youzan/vant/issues/7617
+    &::before {
+      content: ' ';
+    }
+  }
+
+  &__loading {
+    font-size: inherit;
+    color: inherit;
+
+    .#{$component-prefix}loading__circular,
+    .#{$component-prefix}loading__spinner {
+      width: $button-loading-icon-size;
+      height: $button-loading-icon-size;
+      color: currentColor;
+    }
+  }
+
+  &__loading--right,
+  &__icon--right {
+    margin-right: var(--padding-base, $padding-base);
+  }
+
+  &__loading--left,
+  &__icon--left {
+    margin-left: var(--padding-base, $padding-base);
+  }
+}

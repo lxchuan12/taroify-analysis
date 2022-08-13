@@ -1,0 +1,31 @@
+{
+  "name": "@taroify/~hooks",
+  "description": "Taroify hooks",
+  "version": "0.1.0-alpha.1",
+  "license": "MIT",
+  "private": "true",
+  "keywords": [
+    "ui",
+    "taro",
+    "react",
+    "mobile",
+    "frontend",
+    "component",
+    "components"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "peerDependencies": {
+    "@tarojs/taro": "^3.3.6",
+    "lodash": "^4.17.21",
+    "react": "^17.0.2"
+  },
+  "dependencies": {
+    "@vant/area-data": "^1.2.1"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.178"
+  }
+}

@@ -1,0 +1,16 @@
+@import "./variables";
+
+.#{$component-prefix}tabs__line {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  width: $tabs-line-width;
+  height: $tabs-line-height;
+  background: $tabs-line-background-color;
+  border-radius: $tabs-line-border-radius;
+  transform: scale(0);
+
+  &--active {
+    transform: scale(1);
+  }
+}

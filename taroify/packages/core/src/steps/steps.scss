@@ -1,0 +1,19 @@
+@import './variables';
+
+.#{$component-prefix}steps {
+  overflow: hidden;
+  background: $steps-background-color;
+
+  &--horizontal {
+    padding: $steps-horizontal-padding;
+
+    .#{$component-prefix}steps__items {
+      position: relative;
+      display: flex;
+    }
+  }
+
+  &--vertical {
+    padding: $steps-vertical-padding;
+  }
+}

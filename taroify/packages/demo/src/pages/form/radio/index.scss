@@ -1,0 +1,17 @@
+@import "~@taroify/core/styles/prefix";
+@import "~@taroify/core/styles/variables";
+@import "../../../styles/prefix";
+
+.radio-demo {
+
+  .radio-cell-group {
+    .#{$demo-prefix}block__content {
+      padding: 0;
+    }
+  }
+
+  .custom-color {
+    --radio-checked-icon-background-color: #ee0a24;
+    --radio-checked-icon-border-color: #ee0a24;
+  }
+}

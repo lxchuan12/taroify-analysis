@@ -1,0 +1,35 @@
+@import "~@taroify/core/styles/prefix";
+@import "~@taroify/core/styles/variables";
+@import "../../../styles/prefix";
+
+.steps-demo {
+  &__next-block {
+    .#{$demo-prefix}block__title {
+      padding: 16px * $hd 0 0;
+    }
+  }
+
+  .custom-color {
+    .#{$component-prefix}step--completed {
+      .#{$component-prefix}step__icon, {
+        color: #38f;
+      }
+
+      .#{$component-prefix}step__line,
+      .#{$component-prefix}step__circle {
+        background-color: #38f;
+      }
+    }
+
+    .#{$component-prefix}step--active {
+      .#{$component-prefix}step__label,
+      .#{$component-prefix}step__icon {
+        color: #38f;
+      }
+
+      .#{$component-prefix}step__circle {
+        background-color: #38f;
+      }
+    }
+  }
+}

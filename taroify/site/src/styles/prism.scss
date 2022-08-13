@@ -1,0 +1,98 @@
+@import "./variables";
+
+.gatsby-highlight-code-line {
+  display: block;
+  padding-right: 1em;
+  padding-left: 1.25em;
+  background-color: hsla(207, 95%, 15%, 1);
+  border-left: 0.25em solid $vant-green;
+}
+
+.gatsby-highlight {
+  position: relative;
+  display: block;
+  padding: 16px;
+  margin: 20px 0 0;
+  overflow-x: auto;
+  font-family: $vant-code-font-family;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26px;
+  color: $vant-code-color;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  background-color: #fafafa;
+  border-radius: 16px;
+}
+
+code[class*='language-'], pre[class*='language-'] {
+  padding: 0;
+  margin: 0;
+  color: $vant-code-color;
+  background: transparent;
+}
+
+.token.subst {
+  color: $vant-code-color;
+}
+
+.token.string,
+.token.meta,
+.token.symbol,
+.token.attr-value,
+.token.template-tag,
+.token.template-variable,
+.token.addition {
+  color: $vant-green;
+}
+
+
+.token.punctuation {
+  color: $vant-code-color;
+}
+
+.token.comment,
+.token.quote {
+  color: #999;
+}
+
+.token.params,
+.token.keyword,
+.token.property,
+.token.attribute {
+  color: $vant-purple;
+}
+
+.token.function,
+.token.deletion,
+.token.variable,
+.token.boolean,
+.token.number,
+.token.regexp,
+.token.literal,
+.token.bullet,
+.token.link {
+  color: #eb6f6f;
+}
+
+.token.class-name,
+.token.tag,
+.token.operator,
+.token.attr-name,
+.token.selector,
+.token.selector-tag,
+.token.title,
+.token.section,
+.token.built_in,
+.token.doctag,
+.token.type,
+.token.name,
+.token.selector-id,
+.token.selector-class,
+.token.strong {
+  color: #4994df;
+}
+
+.token.emphasis {
+  font-style: italic;
+}

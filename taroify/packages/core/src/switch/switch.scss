@@ -1,0 +1,59 @@
+@import "./variables";
+
+.#{$component-prefix}switch {
+  position: relative;
+  box-sizing: content-box;
+  display: inline-block;
+  width: $switch-width;
+  height: $switch-height;
+  font-size: $switch-font-size;
+  cursor: pointer;
+  background: $switch-background-color;
+  border: $switch-border;
+  border-radius: $switch-node-size;
+  transition: background-color $switch-transition-duration;
+
+  &__node {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $switch-node-width;
+    height: $switch-node-height;
+    // https://github.com/youzan/vant/issues/9839
+    font-size: inherit;
+    background: $switch-node-background-color;
+    border-radius: 100%;
+    box-shadow:$switch-node-box-shadow;
+    transition: transform $switch-transition-duration cubic-bezier(0.3, 1.05, 0.4, 1.05);
+  }
+
+  &__loading {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    line-height: 1;
+  }
+
+  &--checked {
+    background: $switch-checked-background-color;
+
+    .#{$component-prefix}switch__node {
+      transform: $switch-node-translate-x;
+    }
+
+    .#{$component-prefix}switch__loading {
+      color: $switch-loading-color;
+    }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: $switch-disabled-opacity;
+  }
+
+  &--loading {
+    cursor: default;
+  }
+}

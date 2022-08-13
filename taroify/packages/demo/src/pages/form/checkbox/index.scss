@@ -1,0 +1,17 @@
+@import "~@taroify/core/styles/prefix";
+@import "~@taroify/core/styles/variables";
+@import "../../../styles/prefix";
+
+.checkbox-demo {
+
+  .custom-color {
+    --checkbox-checked-icon-border-color: #ee0a24;
+    --checkbox-checked-icon-background-color: #ee0a24;
+  }
+
+  .checkbox-cell-group {
+    .#{$demo-prefix}block__content {
+      padding: 0;
+    }
+  }
+}

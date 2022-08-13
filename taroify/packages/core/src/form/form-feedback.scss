@@ -1,0 +1,29 @@
+@import "./variables";
+
+.#{$component-prefix}form-feedback {
+  font-size: $form-feedback-font-size;
+
+  &--left {
+    text-align: left;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--right {
+    text-align: right;
+  }
+
+  &--valid {
+    color: $form-feedback-valid-color;
+  }
+
+  &--warning {
+    color: $form-feedback-warning-color;
+  }
+
+  &--invalid {
+    color: $form-feedback-invalid-color;
+  }
+}

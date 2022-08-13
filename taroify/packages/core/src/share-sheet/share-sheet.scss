@@ -1,0 +1,82 @@
+@import "./variables";
+
+.#{$component-prefix}share-sheet {
+
+  .#{$component-prefix}sheet__description {
+    font-size: $share-sheet-description-font-size;
+
+  }
+
+  &__options {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    padding: $share-sheet-options-padding;
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+
+    &::before {
+      // TODO Use scss vars
+      @include hairline-top(var(--border-color, $border-color), var(--padding-md, $padding-md), var(--padding-md, $padding-md));
+    }
+
+    &:first-of-type {
+      &::before {
+        content: none;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      height: 0;
+    }
+  }
+
+  &__option {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    width: initial;
+    //// Remove TaroButton default style
+    //background-color: unset;
+    margin-top: 0;
+    //// Remove sheet__item style
+    //padding: 0;
+    cursor: pointer;
+    user-select: none;
+
+    //// Remove TaroButton default style
+    //&::after {
+    //  border: unset;
+    //  border-radius: unset;
+    //}
+
+    &:not([disabled]):active {
+      background-color: transparent;
+      opacity: var(--active-opacity, $active-opacity);
+    }
+
+    &-icon {
+      width: $share-sheet-option-icon-width;
+      height: $share-sheet-option-icon-height;
+      margin: $share-sheet-option-icon-margin;
+      font-size: $share-sheet-option-icon-font-size;
+      line-height: 1;
+    }
+
+    &-name {
+      padding: $share-sheet-option-name-padding;
+      margin-top: $share-sheet-option-name-margin-top;
+      font-size: $share-sheet-option-name-font-size;
+      line-height: $share-sheet-option-name-line-height;
+      color: $share-sheet-option-name-color;
+    }
+
+    &-description {
+      padding: $share-sheet-option-description-padding;
+      font-size: $share-sheet-option-description-font-size;
+      color: $share-sheet-option-description-color;
+    }
+  }
+}

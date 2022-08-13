@@ -1,0 +1,82 @@
+@import "./variables";
+
+.#{$component-prefix}cascader {
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: $cascader-header-height;
+    padding: $cascader-header-padding;
+    font-size: $cascader-header-font-size;
+    font-weight: $cascader-header-font-weight;
+    line-height: $cascader-header-line-height;
+  }
+
+  &__tabs {
+
+    .#{$component-prefix}tabs__tab {
+      flex: none;
+      padding: 0 10px * $hd;
+    }
+
+    &.#{$component-prefix}tabs--line .#{$component-prefix}tabs__wrap {
+      height: $cascader-tabs-height;
+    }
+
+    .#{$component-prefix}tabs__nav--complete {
+      padding-right: 6px * $hd;
+      padding-left: 6px * $hd;
+    }
+  }
+
+  &__tab {
+    font-weight: $cascader-tab-font-weight;
+    color: $cascader-tab-color;
+
+    &--inactive {
+      font-weight: normal;
+      color: $cascader-inactive-tab-color;
+    }
+  }
+
+  &__options {
+    box-sizing: border-box;
+    height: $cascader-options-height;
+    padding-top: 6px * $hd;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $cascader-option-padding;
+    font-size: $cascader-option-font-size;
+    line-height: $cascader-option-line-height;
+    cursor: pointer;
+
+    &:active, &--hover {
+      background: $cascader-option-active-background-color;
+    }
+
+    &--active {
+      font-weight: $cascader-active-option-font-weight;
+      color: $cascader-active-option-color;
+    }
+
+    &--disabled {
+      color: $cascader-disabled-option-color;
+      cursor: not-allowed;
+
+      &:active {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &__active-icon {
+    font-size: $cascader-active-icon-font-size;
+  }
+}

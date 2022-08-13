@@ -1,0 +1,36 @@
+@import "../styles/prefix";
+@import "~@taroify/core/styles/variables";
+
+.#{$demo-prefix}block {
+  margin: 0;
+  font-weight: normal;
+
+  &:first-of-type {
+    .#{$demo-prefix}block__title {
+      padding-top: 20px * $hd;
+    }
+  }
+
+  &__title {
+    padding: 32px * $hd 16px * $hd 16px * $hd;
+    font-size: 14px * $hd;
+    line-height: 16px * $hd;
+    color: rgba(69, 90, 100, 0.6);
+  }
+
+  &:first-of-type {
+    &__title {
+      padding-top: 20px * $hd;
+    }
+  }
+
+  &__content {
+    padding: 0 16px * $hd;
+  }
+
+  &__card {
+    margin: 12px * $hd 12px * $hd 0;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+}

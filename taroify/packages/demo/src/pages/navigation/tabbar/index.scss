@@ -1,0 +1,13 @@
+@import "~@taroify/core/styles/prefix";
+@import "../../../styles/prefix";
+
+.tabbar-demo {
+  .#{$demo-prefix}block__content {
+    padding: 0;
+  }
+
+  .custom-color {
+    --tabbar-item-color: #000;
+    --tabbar-item-active-color: #ee0a24;
+  }
+}

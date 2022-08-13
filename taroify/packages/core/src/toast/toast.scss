@@ -1,0 +1,60 @@
+@import "./variables";
+
+.#{$component-prefix}toast {
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: $toast-width;
+  max-width: $toast-max-width;
+  min-height: $toast-min-height;
+  padding: $toast-padding;
+  font-size: $toast-font-size;
+  line-height: $toast-line-height;
+  color: $toast-color;
+  text-align: center;
+  // https://github.com/youzan/vant/issues/8959
+  word-break: break-all;
+
+  // allow newline character
+  white-space: pre-wrap;
+  background: $toast-background-color;
+  border-radius: $toast-border-radius;
+  transition: all $toast-transition-duration;
+
+  &--text,
+  &--html {
+    width: fit-content;
+    min-width: $toast-text-min-width;
+    min-height: 0;
+    padding: $toast-text-padding;
+
+    .#{$component-prefix}toast__message {
+      margin-top: 0;
+    }
+  }
+
+  &--top {
+    top: $toast-position-top-distance;
+  }
+
+  &--bottom {
+    top: auto;
+    bottom: $toast-position-bottom-distance;
+  }
+
+  &__icon {
+    font-size: $toast-icon-font-size;
+    color: $toast-icon-color;
+  }
+
+  &__loading {
+    padding: $toast-loading-padding;
+    color: $toast-loading-color;
+  }
+
+  &__message {
+    margin-top: var(--padding-xs, $padding-xs);
+  }
+}

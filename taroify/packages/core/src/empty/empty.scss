@@ -1,0 +1,28 @@
+@import "./variables";
+
+.#{$component-prefix}empty {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--empty-padding, $empty-padding);
+
+  &__image {
+    width: $empty-image-width;
+    height: $empty-image-height;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__description {
+    padding: $empty-description-padding;
+    margin-top: $empty-description-margin-top;
+    font-size: $empty-description-font-size;
+    line-height: $empty-description-line-height;
+    color: $empty-description-color;
+  }
+}

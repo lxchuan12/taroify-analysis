@@ -1,0 +1,65 @@
+@import "./variables";
+
+.#{$component-prefix}swiper {
+  position: relative;
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+  // https://github.com/youzan/vant/issues/9931
+  transform: translateZ(0);
+
+  &__track {
+    display: flex;
+    height: 100%;
+
+    &--vertical {
+      flex-direction: column;
+    }
+  }
+
+  &__indicators {
+    position: absolute;
+    bottom: $swiper-indicators-margin;
+    left: 50%;
+    display: flex;
+    transform: translateX(-50%);
+
+    &--vertical {
+      top: 50%;
+      bottom: auto;
+      left: $swiper-indicators-margin;
+      flex-direction: column;
+      transform: translateY(-50%);
+
+      .#{$component-prefix}swiper__indicator:not(:last-child) {
+        margin-bottom: $swiper-indicator-size;
+      }
+    }
+  }
+
+  &__indicator {
+    width: $swiper-indicator-width;
+    height: $swiper-indicator-height;
+    background: $swiper-indicator-background-color;
+    border-radius: 100%;
+    opacity: $swiper-indicator-opacity;
+    transition: opacity $swiper-indicator-transition-duration,
+    background-color $swiper-indicator-transition-duration;
+
+    &:not(:last-child) {
+      margin-right: $swiper-indicator-size;
+    }
+
+    &--active {
+      background: $swiper-indicator-active-background-color;
+      opacity: $swiper-indicator-active-opacity;
+    }
+  }
+}
+
+.#{$component-prefix}swiper-item {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+}

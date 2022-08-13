@@ -1,0 +1,62 @@
+@import "./variables";
+
+.#{$component-prefix}navbar {
+  position: relative;
+  z-index: $navbar-z-index;
+  line-height: $navbar-line-height;
+  text-align: center;
+  user-select: none;
+  background: $navbar-background-color;
+
+  .#{$component-prefix}icon {
+    color: $navbar-icon-color;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: $navbar-height;
+  }
+
+  &__icon {
+    margin-right: $navbar-icon-margin-right;
+    font-size: $navbar-icon-font-size;
+  }
+
+  &__title {
+    max-width: 60%;
+    margin: 0 auto;
+    font-size: $navbar-title-font-size;
+    font-weight: $navbar-title-font-weight;
+    color: $navbar-title-color;
+  }
+
+  &__left,
+  &__right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 var(--padding-md, $padding-md);
+    font-size: var(--font-size-md, $font-size-md);
+    cursor: pointer;
+
+    &:active {
+      opacity: var(--active-opacity, $active-opacity);
+    }
+  }
+
+  &__left {
+    left: 0;
+  }
+
+  &__right {
+    right: 0;
+  }
+
+  &__text {
+    color: $navbar-text-color;
+  }
+}
